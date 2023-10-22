@@ -7,6 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.content.Intent;
+import android.widget.Toast;
+
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +20,10 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class RegisterFragment extends Fragment {
+    private EditText regusername;
+    private EditText regpassword;
+    private Button btnreg;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,7 +68,31 @@ public class RegisterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
+        regusername = view.findViewById(R.id.regusername);
+        regpassword = view.findViewById(R.id.regpassword);
+        btnreg = view.findViewById(R.id.btnreg);
+
+        btnreg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Logika login di sini
+                String username = regusername.getText().toString();
+                String password = regpassword.getText().toString();
+
+                if (username.isEmpty() && password.isEmpty()) {
+                    Toast.makeText(getActivity(), "Data tidak boleh kosong", Toast.LENGTH_SHORT).show();
+                } else {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("username", username);
+                    bundle.putString("password", password);
+                    Intent ii = new Intent(getActivity(), home.class);
+                    ii.putExtras(bundle);
+                    startActivity(ii);
+                }
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false);
+        return view;
     }
 }
