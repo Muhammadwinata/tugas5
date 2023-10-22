@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary"
     tools:context=".RegisterFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,15 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="REGISTER PAGE"
+            android:text="REGISTER"
             android:textSize="65dp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             android:layout_marginTop="24dp"
             android:textAlignment="center"/>
 
@@ -27,12 +29,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"
+            android:textColorHint="@color/white"
             android:inputType="text"/>
         <EditText
             android:id="@+id/regpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
+            android:textColorHint="@color/white"
             android:layout_marginBottom="18dp"
             android:inputType="textPassword"/>
         <Button

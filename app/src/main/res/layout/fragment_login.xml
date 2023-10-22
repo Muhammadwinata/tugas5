@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primary"
     tools:context=".LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,15 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOGIN PAGE"
+            android:text="LOGIN"
             android:textSize="65dp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             android:layout_marginTop="24dp"
             android:textAlignment="center"/>
 
@@ -26,13 +28,15 @@
             android:id="@+id/loginusername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:hint="ketik pengguna"
+            android:textColorHint="@color/white"
             android:inputType="text"/>
         <EditText
             android:id="@+id/loginpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="Ketik pengguna"
+            android:textColorHint="@color/white"
             android:layout_marginBottom="18dp"
             android:inputType="textPassword"/>
         <Button
@@ -40,13 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sign In"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Username = admin, Password = admin"
-            android:layout_marginTop="50dp"
-            android:textSize="14dp"
-            android:textStyle="bold"/>
+
     </LinearLayout>
 
 </FrameLayout>
